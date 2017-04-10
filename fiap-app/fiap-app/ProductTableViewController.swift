@@ -25,7 +25,7 @@ class ProductTableViewController: UITableViewController {
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
         label.text = "Sua Lista está vazia!"
         label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = UIColor.gray
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,22 +41,18 @@ class ProductTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print("entrou!")
-        tableView.backgroundView = label
+        self.tableView.backgroundView = label
+        self.tableView.separatorStyle = .none
         return 0
-        
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! ProductTableViewCell
+        //cell.lblProductName.text = "Camisa"
         // Configure the cell...
-
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
